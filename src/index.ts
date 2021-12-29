@@ -9,5 +9,3 @@ declare global {
 if (window) {
   window.scream = scream;
 }
-
-export default scream;
