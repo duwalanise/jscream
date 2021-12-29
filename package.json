@@ -1,13 +1,27 @@
 {
   "name": "jscream",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A simple library build for a JSMonday article.",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/duwalanise/jscream"
+  },
   "scripts": {
     "build": "tsc",
+    "prepare": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "Anish Duwal <duwalanise@gmail.com>",
-  "license": "ISC"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^27.0.3",
+    "jest": "^27.4.5",
+    "ts-jest": "^27.1.2",
+    "typescript": "^4.5.4"
+  }
 }
