@@ -39,9 +39,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
           WITH_V: true
+
+      - run: |
+          git config --global user.email "${{ github.actor }}@noreply.github.com"
+          git config --global user.name "${{ github.actor }}"
+          echo "${{ steps.bump_version.outputs.tag }}"
+
       - name: Publish
         run: |
           npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
-          npm publish --ignore-scripts
+          npm version --no-git-tag-version "${{ steps.bump_version.outputs.tag }}" && npm publish --ignore-scripts
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
