@@ -1,9 +1,13 @@
-type scream = string;
+import scream from "./scream";
 
-export default function scream(sentence: string): scream {
-  return addExclamationPoints(sentence).toUpperCase();
+declare global {
+  interface Window {
+    scream: typeof scream;
+  }
 }
 
-export function addExclamationPoints(str: string): string {
-  return str.replace(/\?/g, "?!").replace(/\.$/, "!!!");
+if (window) {
+  window.scream = scream;
 }
+
+export default scream;
