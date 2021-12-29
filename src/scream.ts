@@ -5,5 +5,5 @@ export default function scream(sentence: string): scream {
 }
 
 export function addExclamationPoints(str: string): string {
-  return str.replace(/\?/g, "?!").replace(/\.$/, "!!!!");
+  return str.replace(/\?/g, "?!").replace(/\.$/, "!!!");
 }

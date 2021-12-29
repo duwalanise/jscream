@@ -1,4 +1,4 @@
-import scream, { addExclamationPoints } from "../src/index";
+import scream, { addExclamationPoints } from "../src/index.esm";
 
 test("Testing 'scream' function", () => {
   expect(scream("Hello")).toBe("HELLO");
